@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/message/message",
+    "pages/user/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#5171f0",
+    "navigationBarTitleText": "CNode 社区",
+    "navigationBarTextStyle": "fff"
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#5171f0",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/tabbar-home.svg",
+        "selectedIconPath": "assets/tabbar-home-hl.svg",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "assets/tabbar-message.svg",
+        "selectedIconPath": "assets/tabbar-message-hl.svg",
+        "text": "接口"
+      },
+      {
+        "pagePath": "pages/user/index/index",
+        "iconPath": "assets/tabbar-me.svg",
+        "selectedIconPath": "assets/tabbar-me-hl.svg",
+        "text": "我"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}
