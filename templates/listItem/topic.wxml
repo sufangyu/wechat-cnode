@@ -1,0 +1,34 @@
+<!--
+  index: int
+  msg: string
+  time: string
+-->
+<template name="topicItem">
+    <view class="topic">
+        <view class="topic__info meta">
+            <view class="meta__header">
+                <image src="{{ author.avatar_url }}" />
+            </view>
+            <view class="meta__body">
+                <text class="topic__author">{{ author.loginname }}</text>
+                <text class="topic__reply__at">{{ last_reply_at }}</text>
+            </view>
+        </view>
+
+        <view class="topic__content">
+            <text class="topic__title">{{ title }}</text>
+            <text class="topic__summary">{{ content }}</text>
+        </view>
+
+        <view class="topic__meta meta flex-between">
+            <view class="meta__left">
+                <text class="topic__visit">{{ visit_count }}</text>
+                <text class="topic__reply">{{ reply_count }}</text>
+            </view>
+            <view class="meta__right">
+                <text class="topic__create__at">{{ create_at }}</text>
+            </view>
+        </view>
+
+    </view>
+</template>
