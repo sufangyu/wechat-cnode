@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<import is="topicItem" src="../../templates/listItem/topic.wxml" />
+
+<view class="container">
+	<view class="page__topic">
+		<!-- tab -->
+		<scroll-view 
+			scroll-x 
+			class="topic__tabs scroll-x"
+		>
+			<text 
+				wx:for="{{tabs}}" 
+				wx:key="{{index}}" 
+				data-value="{{ item.value }}"
+				class="{{ item.value === currentTab ? 'active' : '' }}"
+				bindtap="changeTab"
+			>{{ item.name }}</text>
+		</scroll-view>
+
+		<view class="topic__lists">
+			<scroll-view 
+				class="topic__list"
+				scroll-y
+				wx:for="{{tabs}}" 
+				wx:key="{{index}}" 
+				data-value="{{ item.value }}"
+				wx:if="{{ item.value === currentTab }}"
+				bindscrolltolower="loadMore"
+			>
+				<template
+					is="topicItem"
+					wx:for="{{topics[item.value].lists}}"
+        			wx:key="{{index}}"
+					data="{{...item}}"
+				/>
+				<view class="infinite__state">
+					<block wx:if="{{topics[item.value].isInit && topics[item.value].isLoading}}">
+						<text>正在加载中</text>
+					</block>
+					<block wx:if="{{topics[item.value].isInit && topics[item.value].isNoData}}">
+						<text>没有更多数据了</text>
+					</block>
+				</view>
+			</scroll-view>
+		</view>
+
+	</view>
+</view>
