@@ -2,13 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/message/message",
-    "pages/user/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#5171f0",
     "navigationBarTitleText": "CNode 社区",
-    "navigationBarTextStyle": "fff"
+    "navigationBarTextStyle": "#fff"
   },
   "tabBar": {
     "color": "#808080",
