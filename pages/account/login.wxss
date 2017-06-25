@@ -1,0 +1,24 @@
+.login__header {
+    height: 320rpx;
+    background-color: #5171f0;
+    position: relative;
+    margin-bottom: 120rpx;
+}
+
+.login__header image {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: -80rpx;
+    transform: translateX(-50%);
+}
+
+.login__form {
+    padding: 0 20rpx;
+}
+.login__form input {
+    border-bottom: 1rpx solid #f0f0f0;
+    margin-bottom: 30rpx;
+}

@@ -1,30 +1,30 @@
 //app.js
 App({
-  onLaunch: function () {
-    //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-  },
-  getUserInfo:function(cb){
-    var that = this
-    if(this.globalData.userInfo){
-      typeof cb == "function" && cb(this.globalData.userInfo)
-    }else{
-      //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo
-              typeof cb == "function" && cb(that.globalData.userInfo)
-            }
-          })
-        }
-      })
-    }
-  },
-  globalData:{
-    userInfo:null
-  }
+	globalData: {
+		userInfo: null,
+		auth: null,
+	},
+	onLaunch () {
+		//调用API
+		this.getAuth();
+	},
+	// 获取 Auth
+	getAuth() {
+		try {
+			this.globalData.auth = wx.getStorageSync('auth');
+			console.log('当前 auth => ', this.globalData.auth);
+		} catch (err) {
+			console.log(err);
+		}
+	},
+	// 设置 Auth
+	setAuth(auth) {
+		try {
+			wx.setStorageSync('auth', auth);
+			this.globalData.auth = auth;
+			console.log('当前 auth => ', this.globalData.auth);
+		} catch (err) {
+			console.log(err);
+		}
+	},
 })

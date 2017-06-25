@@ -1,0 +1,19 @@
+<view class="container white-bg">
+    <view class="login__header">
+        <image src="../../../assets/default-avatar.png" />
+    </view>
+
+    <view class="login__form">
+        <input 
+            placeholder="请输入 AccessToken" 
+            focus 
+            value="{{token}}"
+        />
+        <button 
+            type="primary"
+            disabled="{{disabled}}"
+            loading="{{loading}}"
+            bindtap="submitLogin"
+        >登录</button>
+    </view>
+</view>
