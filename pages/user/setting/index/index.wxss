@@ -1,0 +1,8 @@
+.logout__button {
+    text-align: center;
+    color: #5171f0;
+    padding: 25rpx 0;
+}
+.logout__button:active {
+    background-color: rgba(0,0,0,0.05);
+}

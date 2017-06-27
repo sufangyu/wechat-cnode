@@ -1,0 +1,40 @@
+<view class="container">
+    <view class="panel">    
+        <navigator url="/pages/user/setting/cnode/cnode" class="list-menu">
+            <view class="list-menu__header">
+                <image src="../../../../assets/set-cnode.svg" />
+            </view>
+            <view class="list-menu__body">
+                <text class="list-menu__title">关于 CNode 社区</text>
+            </view>
+            <view class="list-menu__footer">
+                <image src="../../../../assets/arrow-left.svg" />
+            </view>
+        </navigator>
+
+        <view class="list-menu list-menu--disabled" >
+            <view class="list-menu__header">
+                <image src="../../../../assets/set-clear.svg" />
+            </view>
+            <view class="list-menu__body">
+                <text class="list-menu__title">清除缓存</text>
+            </view>
+        </view>
+
+        <view class="list-menu">
+            <view class="list-menu__header">
+                <image src="../../../../assets/set-version.svg" />
+            </view>
+            <view class="list-menu__body">
+                <text class="list-menu__title">当前版本</text>
+            </view>
+            <view class="list-menu__footer">
+                <text>{{version}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="panel">    
+        <view class="logout__button" bindtap="logout"><text>退出登录</text></view>
+    </view>
+</view>
