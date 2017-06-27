@@ -1,0 +1,49 @@
+<view class="container">
+    <view class="panel">    
+        <view class="list-menu">
+            <view class="list-menu__body">
+                <text class="list-menu__title">头像</text>
+            </view>
+            <view class="user-avatar list-menu__footer">
+                <image class="" src="{{userInfoDetail.avatar}}" />
+            </view>
+        </view>
+
+        <view class="list-menu">
+            <view class="list-menu__body">
+                <text class="list-menu__title">昵称</text>
+            </view>
+            <view class="list-menu__footer">
+                <text>{{userInfoDetail.name}}</text>
+            </view>
+        </view>
+
+        <view class="list-menu">
+            <view class="list-menu__body">
+                <text class="list-menu__title">积分</text>
+            </view>
+            <view class="list-menu__footer">
+                <text>{{userInfoDetail.score}}</text>
+            </view>
+        </view>
+
+        <view class="list-menu">
+            <view class="list-menu__body">
+                <text class="list-menu__title">注册时间</text>
+            </view>
+            <view class="list-menu__footer">
+                <text>{{userInfoDetail.createDate}}</text>
+            </view>
+        </view>
+
+        <view class="list-menu">
+            <view class="list-menu__body">
+                <text class="list-menu__title">邮箱</text>
+            </view>
+            <view class="list-menu__footer">
+                <text>{{userInfoDetail.email}}</text>
+            </view>
+        </view>
+        
+    </view>    
+</view>

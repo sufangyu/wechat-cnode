@@ -1,0 +1,13 @@
+.user__header {
+    padding: 60rpx;
+    background-color: #5171f0;
+    color: #fff;
+    text-align: center;
+}
+.user__header image {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+    margin-bottom: 25rpx;
+    background-color: rgba(255,255,255,0.2);
+}

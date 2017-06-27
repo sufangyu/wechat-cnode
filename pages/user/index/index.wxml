@@ -1,0 +1,103 @@
+<view class="container">
+    <view class="user__header">
+        <navigator wx:if="{{!isLogin}}" url="/pages/account/login">
+            <image src="../../../assets/default-avatar.png" />
+            <view><text>登录/注册</text></view>
+        </navigator>
+        <block wx:if="{{isLogin}}">
+            <image src="{{userInfo.avatarUrl}}" />
+            <view><text>{{userInfo.loginName}}</text></view>
+        </block>
+    </view>
+
+    <view class="panel panel--padding">
+        <view class="grids">
+            <view class="grid">
+                <navigator url="/pages/account/login">
+                    <image class="grid__icon" src="../../../assets/creat.svg" />
+                    <view><text class="grid__name">发表主题</text></view>
+                </navigator>
+            </view>
+            <view class="grid">
+                <navigator url="/pages/account/login">
+                    <image class="grid__icon" src="../../../assets/reply.svg" />
+                    <view><text class="grid__name">最近回复</text></view>
+                </navigator>
+            </view>
+            <view class="grid">
+                <navigator url="/pages/account/login">
+                    <image style="color: rgb(255, 152, 0);" class="grid__icon" src="../../../assets/send.svg" />
+                    <view><text class="grid__name">最近发布</text></view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+
+    <view class="panel">
+        <navigator url="/pages/account/login" class="list-menu">
+            <view class="list-menu__header">
+                <image src="../../../assets/set-favorites.svg" />
+            </view>
+            <view class="list-menu__body">
+                <text class="list-menu__title">我的收藏</text>
+            </view>
+            <view class="list-menu__footer">
+                <image src="../../../assets/arrow-left.svg" />
+            </view>
+        </navigator>
+
+        <navigator url="/pages/user/me/me" class="list-menu">
+            <view class="list-menu__header">
+                <image src="../../../assets/set-user.svg" />
+            </view>
+            <view class="list-menu__body">
+                <text class="list-menu__title">个人资料</text>
+            </view>
+            <view class="list-menu__footer">
+                <image src="../../../assets/arrow-left.svg" />
+            </view>
+        </navigator>
+
+        <navigator url="/pages/account/login" class="list-menu list-menu--more">
+            <view class="list-menu__header">
+                <image src="../../../assets/set-comment.svg" />
+            </view>
+            <view class="list-menu__body">
+                <text class="list-menu__title">意见反馈</text>
+                <view class="list-menu__brief"><text>去 GItHub 上提交 Issues</text></view>
+            </view>
+            <view class="list-menu__footer">
+                <image src="../../../assets/arrow-left.svg" />
+            </view>
+        </navigator>
+
+        <navigator url="/pages/account/login" class="list-menu">
+            <view class="list-menu__header">
+                <image src="../../../assets/set-setting.svg" />
+            </view>
+            <view class="list-menu__body">
+                <text class="list-menu__title">设置</text>
+            </view>
+            <view class="list-menu__footer">
+                <image src="../../../assets/arrow-left.svg" />
+            </view>
+        </navigator>
+        
+    </view>
+
+    <view class="panel">
+        <navigator url="/pages/user/about/about" class="list-menu">
+            <view class="list-menu__header">
+                <image src="../../../assets/set-about.svg" />
+            </view>
+            <view class="list-menu__body">
+                <text class="list-menu__title">关于项目</text>
+            </view>
+            <view class="list-menu__extra"><text>1.0.1</text></view>
+            <view class="list-menu__footer">
+                <image src="../../../assets/arrow-left.svg" />
+            </view>
+        </navigator>
+    </view>
+
+</view>

@@ -1,0 +1,10 @@
+/* me.wxss */
+.user-avatar {
+    opacity: 1;
+}
+.user-avatar image {
+    width: 60rpx;
+    height: 60rpx; 
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.15);
+}
