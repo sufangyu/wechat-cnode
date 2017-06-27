@@ -71,7 +71,7 @@
             </view>
         </navigator>
 
-        <navigator url="/pages/account/login" class="list-menu">
+        <navigator url="/pages/user/setting/index/index" class="list-menu">
             <view class="list-menu__header">
                 <image src="../../../assets/set-setting.svg" />
             </view>

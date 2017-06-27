@@ -8,15 +8,15 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		isLogin: false,
-		userInfo: null,
+		isLogin: false,       // 是否已登录
+		isGetUserInfo: false, // 是否已获取信息
+		userInfo: null,       // 用户信息
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		this.checkIsLogin();
 	},
 
 	/**
@@ -43,16 +43,21 @@ Page({
 	 * 生命周期函数--监听页面卸载
 	 */
 	onUnload: function () {
+
 	},
 	// 检查是否登录
 	checkIsLogin() {
-		if (this.data.isLogin || !APP.globalData.auth.token) {
+		if (this.data.isGetUserInfo) {
+			// 已获取到用户信息
+			return;
+		} else if (!APP.globalData.isLogin) {
+			// 未登录
+			this.setData({
+				isLogin: APP.globalData.isLogin,
+				userInfo: APP.globalData.userInfo,
+			});
 			return;
 		}
-
-		this.setData({
-			isLogin: !!APP.globalData.auth,
-		});
 
 		const requestAccessToken = {
 			accesstoken: APP.globalData.auth.token || '',
@@ -72,6 +77,7 @@ Page({
 				APP.globalData.userInfo = userInfo;
 				this.setData({
 					userInfo: userInfo,
+					isLogin: true,
 				});
 			}
         });
