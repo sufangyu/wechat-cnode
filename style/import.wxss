@@ -44,6 +44,9 @@
 	align-items: center;
 	border-bottom: 1rpx solid rgba(0,0,0,0.1);
 }
+.list-menu--disabled {
+	opacity: 0.5;
+}
 .list-menu:last-child {
 	border-bottom: none;
 }
@@ -92,7 +95,7 @@
 ----------------------------*/
 .text__content {
     line-height: 1.6;
-    padding: 0 30rpx;
+    padding: 30rpx;
     font-size: 32rpx;
     overflow: hidden;
 }
