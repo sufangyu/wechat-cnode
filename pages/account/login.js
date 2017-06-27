@@ -21,7 +21,7 @@ Page({
      */
     onLoad: function (options) {
 		this.setData({    
-			title: options.redirect || '',
+			redirect: options.redirect || '',
 		});
     },
 
@@ -74,7 +74,6 @@ Page({
 
 				wx.showToast({
 					title: '登录成功',
-					icon: 'success',
 					image: '../../assets/success.svg',
 					duration: 2000,
 					success: () => {
@@ -90,7 +89,6 @@ Page({
 			this.removeLogining();
 			wx.showToast({
 				title: '失败成功',
-				icon: 'success',
 				image: '../../assets/fail.svg',
 			});
 		});
