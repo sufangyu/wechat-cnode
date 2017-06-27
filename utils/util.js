@@ -22,9 +22,9 @@ function formatNumber(n) {
  */
 function isTabBarPage(url) {
 	const tabBarPages = [
-		'/pages/user/index/index',
 		'/pages/index/index',
 		'/pages/message/message',
+		'/pages/user/index/index',
 	];
 
 	return tabBarPages.indexOf(url) !== -1;	

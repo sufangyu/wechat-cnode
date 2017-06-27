@@ -1,8 +1,13 @@
 {
   "pages": [
+    "pages/user/index/index",
+    "pages/user/about/about",
+    "pages/user/me/me",
     "pages/index/index",
     "pages/message/message",
-    "pages/user/index/index"
+    "pages/account/login",
+    "pages/user/setting/index/index",
+    "pages/user/setting/cnode/cnode"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,6 +22,12 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
+        "pagePath": "pages/user/index/index",
+        "iconPath": "assets/tabbar-me.svg",
+        "selectedIconPath": "assets/tabbar-me-hl.svg",
+        "text": "我"
+      },
+      {
         "pagePath": "pages/index/index",
         "iconPath": "assets/tabbar-home.svg",
         "selectedIconPath": "assets/tabbar-home-hl.svg",
@@ -27,12 +38,6 @@
         "iconPath": "assets/tabbar-message.svg",
         "selectedIconPath": "assets/tabbar-message-hl.svg",
         "text": "信息"
-      },
-      {
-        "pagePath": "pages/user/index/index",
-        "iconPath": "assets/tabbar-me.svg",
-        "selectedIconPath": "assets/tabbar-me-hl.svg",
-        "text": "我"
       }
     ]
   },
