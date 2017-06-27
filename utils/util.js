@@ -24,11 +24,12 @@ function isTabBarPage(url) {
 	const tabBarPages = [
 		'/pages/user/index/index',
 		'/pages/index/index',
-		'pages/message/message',
+		'/pages/message/message',
 	];
 
 	return tabBarPages.indexOf(url) !== -1;	
 } 
+
 
 /**
  * 重定向
@@ -56,10 +57,23 @@ function redirect(url) {
 			}
 		});
 	}
-} 
+}
+
+
+/**
+ * 重定向到登录页面
+ * @param {*} url 
+ */
+function redirectToLogin(url) {
+	const redirectUrl = '/pages/account/login?redirect=/' + url;
+	redirect(redirectUrl);
+}
+
+
 
 module.exports = {
 	formatTime,
 	isTabBarPage,
 	redirect,
+	redirectToLogin,
 }
