@@ -22,8 +22,8 @@
 
         <view class="topic__meta meta flex-between">
             <view class="meta__left">
-                <text class="topic__visit">{{ visit_count }}</text>
-                <text class="topic__reply">{{ reply_count }}</text>
+                <text class="topic__visit">看：{{ visit_count }}</text>
+                <text class="topic__reply">评：{{ reply_count }}</text>
             </view>
             <view class="meta__right">
                 <text class="topic__create__at">{{ create_at }}</text>
