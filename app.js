@@ -13,7 +13,10 @@ App({
 	getAuth() {
 		try {
 			this.globalData.auth = wx.getStorageSync('auth') || null;
-			console.log('当前 auth => ', this.globalData.auth);
+			console.log('当前 auth => ', wx.getStorageSync('auth'));
+			if (!!wx.getStorageSync('auth')) {
+				this.globalData.isLogin = true;
+			}
 		} catch (err) {
 			console.log(err);
 		}
