@@ -47,11 +47,8 @@ Page({
 	},
 	// 检查是否登录
 	checkIsLogin() {
-		if (this.data.isGetUserInfo) {
-			// 已获取到用户信息
-			return;
-		} else if (!APP.globalData.isLogin) {
-			// 未登录
+		if (this.data.isGetUserInfo || !APP.globalData.isLogin) {
+			// 已获取到用户信息 or 未登录
 			this.setData({
 				isLogin: APP.globalData.isLogin,
 				userInfo: APP.globalData.userInfo,
