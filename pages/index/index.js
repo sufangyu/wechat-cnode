@@ -1,5 +1,6 @@
 //index.js
 import request from '../../api/request.js';
+import moment from '../../utils/moment.js';
 
 Page({
     data: {
@@ -131,6 +132,7 @@ Page({
 					// 格式化数据
 					res.data.forEach((item) => {
 						item.content = item.content.substring(0, 80).replace(/\r\n/gi, '');
+						item.create_at = moment(item.create_at).format('YYYY-MM-DD HH:MM:SS');
 					});
 
 					console.log(currentTabObj);
