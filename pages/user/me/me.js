@@ -49,7 +49,7 @@ Page({
     },
 	// 检查是否登录
     checkIsLogin() {
-		if (!APP.globalData.auth.token) {
+		if (!APP.globalData.isLogin) {
 			// 未登录, 重定向到登录页面
 			console.log('未登录, 重定向到登录页面');
 			const redirectUrl = this.route;
