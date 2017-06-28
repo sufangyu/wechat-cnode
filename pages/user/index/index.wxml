@@ -34,7 +34,7 @@
     </view>
 
     <view class="panel">
-        <navigator url="/pages/account/login" class="list-menu">
+        <navigator url="/pages/user/collect/collect" class="list-menu">
             <view class="list-menu__header">
                 <image src="../../../assets/set-favorites.svg" />
             </view>
