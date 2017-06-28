@@ -1,0 +1,13 @@
+<!--collect.wxml-->
+<import is="topicItem" src="../../../templates/listItem/topic.wxml" />
+
+<view class="container">
+	<view class="page__collect">
+        <template
+            is="topicItem"
+            wx:for="{{topics}}"
+            wx:key="{{index}}"
+            data="{{...item}}"
+        />
+    </view>
+</view>
