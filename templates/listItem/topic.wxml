@@ -1,8 +1,4 @@
-<!--
-  index: int
-  msg: string
-  time: string
--->
+<!-- 主题 -->
 <template name="topicItem">
     <view class="topic">
         <view class="topic__info meta">
