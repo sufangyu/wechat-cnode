@@ -1,8 +1,16 @@
 <!--collect.wxml-->
 <import is="topicItem" src="../../../templates/listItem/topic.wxml" />
+<import is="pageLoading" src="../../../templates/status/pageLoading.wxml" />
 
 <view class="container">
 	<view class="page__collect">
+
+        <template
+            wx:if="statusLoading.show"
+            is="pageLoading"
+            data="{{...statusLoading}}"
+        />
+
         <template
             is="topicItem"
             wx:for="{{topics}}"

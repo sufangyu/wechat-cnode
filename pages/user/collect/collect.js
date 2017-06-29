@@ -11,6 +11,11 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		statusLoading: {
+			show: true,
+			image: '../../../assets/status/loading.svg',
+			text: '正在加载中',
+		},
 		topics: [],
 	},
 
