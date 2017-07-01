@@ -1,0 +1,16 @@
+<!-- 页面加载失败 
+    image: 图片地址
+-->
+<template name="statusFail">
+    <view 
+        class="status status--fail {{style == 'module' ? 'status--style-module':''}}"
+        bindtap="{{ event || 'failHandle' }}"
+    >
+        <view class="status__image" wx:if="{{image !== ''}}">
+            <image src="{{image}}" />
+        </view>
+        <view class="status__text" wx:if="{{text !== ''}}">
+            <text>{{text}}</text>
+        </view>
+    </view>
+</template>

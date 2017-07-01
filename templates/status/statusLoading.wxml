@@ -1,0 +1,13 @@
+<!-- 页面正在加载 
+    image: 图片地址
+-->
+<template name="statusLoading">
+    <view class="status status--loading {{style == 'module' ? 'status--style-module':''}}">
+        <view class="status__image" wx:if="{{image !== ''}}">
+            <image src="{{image}}" />
+        </view>
+        <view class="status__text" wx:if="{{text !== ''}}">
+            <text>{{text}}</text>
+        </view>
+    </view>
+</template>
