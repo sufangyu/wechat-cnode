@@ -16,6 +16,16 @@ Page({
 			image: '../../../assets/status/loading.svg',
 			text: '正在加载中',
 		},
+		statusFail: {
+			show: false,
+			image: '../../../assets/status/fail.svg',
+			text: '加载失败，点击重试~',
+		},
+		statusEmpty: {
+			show: false,
+			image: '../../../assets/status/empty.svg',
+			text: '暂时没有数据~',
+		},
 		topics: [],
 	},
 
@@ -90,6 +100,17 @@ Page({
 	},
 	// 获取收藏
 	getUserCollect(loginname) {
+		// 没有数据
+		this.data.statusLoading.show = true;
+		this.data.statusFail.show = false;
+		this.data.statusEmpty.show = false;
+
+		this.setData({
+			statusLoading: this.data.statusLoading,
+			statusFail: this.data.statusFail,
+			statusEmpty: this.data.statusEmpty,
+		});
+		
 		request.getCollections(loginname, (res) => {
 			console.log(res);
 			if (res.success) {
@@ -101,18 +122,49 @@ Page({
 						item.create_at = moment(item.create_at).format('YYYY-MM-DD HH:MM:SS');
 					});
 
-					this.setData({
-						topics: collect,
-					});
+					this.data.topics = collect;
 				} else {
-					// 没有更多数据了
-				}
-
-				
+					// 没有数据
+					this.data.statusLoading.show = false;
+					this.data.statusFail.show = false;
+					this.data.statusEmpty.show = true;
+				}				
 			} else {
+				// 加载出错
+				const error_msg = !!res.error_msg ? res.error_msg : '加载失败';
+				this.data.statusLoading.show = false;
+				this.data.statusFail.show = true;
+				this.data.statusFail.text = error_msg;
+				this.data.statusEmpty.show = false;
 			}
+
+			this.setData({
+				statusLoading: this.data.statusLoading,
+				statusFail: this.data.statusFail,
+				statusEmpty: this.data.statusEmpty,
+
+				topics: this.data.topics,
+			});
 		}, (err) => {
 			console.log(err);
+			// 加载出错
+			const error_msg = !!res.error_msg ? res.error_msg : '加载失败，请重试';
+			this.data.statusLoading.show = false;
+			this.data.statusFail.show = true;
+			this.data.statusFail.text = error_msg;
+			this.data.statusEmpty.show = false;
+
+			this.setData({
+				statusLoading: this.data.statusLoading,
+				statusFail: this.data.statusFail,
+				statusEmpty: this.data.statusEmpty,
+			});
 		});
-	}
+	},
+	// 加载失败, 重新获取收藏
+	failHandle() {
+		console.log('加载失败, 重新获取收藏');
+		const loginname = APP.globalData.auth.loginName || '';
+		this.getUserCollect(loginname);
+	},
 })

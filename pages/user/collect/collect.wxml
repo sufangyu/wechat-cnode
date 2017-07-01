@@ -1,14 +1,29 @@
 <!--collect.wxml-->
 <import is="topicItem" src="../../../templates/listItem/topic.wxml" />
-<import is="pageLoading" src="../../../templates/status/pageLoading.wxml" />
+<import is="statusLoading" src="../../../templates/status/statusLoading.wxml" />
+<import is="statusFail" src="../../../templates/status/statusFail.wxml" />
+<import is="statusEmpty" src="../../../templates/status/statusEmpty.wxml" />
 
 <view class="container">
 	<view class="page__collect">
 
         <template
-            wx:if="statusLoading.show"
-            is="pageLoading"
+            is="statusLoading"
+            wx:if="{{statusLoading.show}}"
             data="{{...statusLoading}}"
+        />
+
+        <template
+            is="statusFail"
+            wx:if="{{statusFail.show}}"
+            data="{{...statusFail}}"
+            bindtap="failHandle"
+        />
+
+        <template
+            is="statusEmpty"
+            wx:if="{{statusEmpty.show}}"
+            data="{{...statusEmpty}}"
         />
 
         <template
