@@ -38,18 +38,45 @@
 /**---------------------------------
 * status
 -----------------------------------*/
-.page__status {
-	text-align: center;
+.status {
 	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
-.page__status__image {
-	width: 240rpx;
-	height: 240rpx; 
+.status__image {
+	width: 120rpx;
+	height: 120rpx;
+	margin: 0 auto;
+	text-align: center;
 }
-.page__status__image image {
+.status__image image {
 	width: 100%;
 	height: 100%;
+	margin: 0 auto;
 }
+.status__text {
+	margin-top: 30rpx;
+	color: #808080;
+}
+
+.status--style-module {
+	height: auto;
+	display: block;
+	text-align: center;
+	padding: 50rpx 0;
+}
+.status--style-module .status__image {
+	width: 60px;
+	height: 60px;
+}
+.status--style-module .status__text {
+	font-size: 28rpx;
+}
+
+
+
 
 
 /**---------------------------------
