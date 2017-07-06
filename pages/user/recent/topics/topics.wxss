@@ -1,0 +1,7 @@
+/* tipics.wxss */
+.button__edit {
+    color: #5171f0;
+}
+.button__del {
+    opacity: 0.5;
+}

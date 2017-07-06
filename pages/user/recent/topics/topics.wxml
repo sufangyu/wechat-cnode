@@ -1,0 +1,35 @@
+<!--tipics.wxml-->
+<import is="recentTopic" src="../../../../templates/listItem/recentTopic.wxml" />
+<import is="statusLoading" src="../../../../templates/status/statusLoading.wxml" />
+<import is="statusFail" src="../../../../templates/status/statusFail.wxml" />
+<import is="statusEmpty" src="../../../../templates/status/statusEmpty.wxml" />
+
+
+<view class="container">
+    <template
+        is="statusLoading"
+        wx:if="{{statusLoading.show}}"
+        data="{{...statusLoading}}"
+    />
+
+    <template
+        is="statusFail"
+        wx:if="{{statusFail.show}}"
+        data="{{...statusFail}}"
+        bindtap="failHandle"
+    />
+
+    <template
+        is="statusEmpty"
+        wx:if="{{statusEmpty.show}}"
+        data="{{...statusEmpty}}"
+    />
+
+    <template 
+        is="recentTopic"
+        wx:for="{{topics}}"
+        wx:key="{{index}}"
+        data="{{...item}}"
+    />
+
+</view>
