@@ -19,13 +19,13 @@
                 </navigator>
             </view>
             <view class="grid">
-                <navigator url="/pages/account/login">
+                <navigator url="/pages/user/recent/replies/replies">
                     <image class="grid__icon" src="../../../assets/reply.svg" />
                     <view><text class="grid__name">最近回复</text></view>
                 </navigator>
             </view>
             <view class="grid">
-                <navigator url="/pages/account/login">
+                <navigator url="/pages/user/recent/topics/topics">
                     <image style="color: rgb(255, 152, 0);" class="grid__icon" src="../../../assets/send.svg" />
                     <view><text class="grid__name">最近发布</text></view>
                 </navigator>
