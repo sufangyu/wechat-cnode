@@ -1,0 +1,19 @@
+<!-- 最近发布 -->
+<template name="recentTopic">
+    <view class="meta recent-item">
+        <view class="meta__header">
+            <image src="{{ author.avatar_url }}" />
+        </view>
+        <view class="meta__body">
+            <view class="recent-item__title">{{title}}</view>
+            <view class="recent-item__meta flex flex-between">
+                <view class="flex-between__left">
+                    <text class="button__edit" data-id="{{id}}" bindtap="handlerEdit">编辑</text>
+                    <text class="button__preview" data-id="{{id}}" bindtap="handlerPreview">预览</text>
+                    <text class="button__del" data-id="{{id}}" bindtap="handlerDel">删除</text>
+                </view>
+                <text class="flex-between__right">{{ last_reply_at }}</text>
+            </view>
+        </view>
+    </view>
+</template>
