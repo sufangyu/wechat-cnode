@@ -100,7 +100,7 @@ Page({
 	},
 	// 获取收藏
 	getUserCollect(loginname) {
-		// 没有数据
+		// 初始化加载状态
 		this.data.statusLoading.show = true;
 		this.data.statusFail.show = false;
 		this.data.statusEmpty.show = false;
@@ -114,6 +114,9 @@ Page({
 		request.getCollections(loginname, (res) => {
 			console.log(res);
 			if (res.success) {
+				this.data.statusLoading.show = false;
+				this.data.statusFail.show = false;
+
 				if (res.data.length) {
 					const collect = res.data;
 					// 格式化数据
@@ -125,10 +128,8 @@ Page({
 					this.data.topics = collect;
 				} else {
 					// 没有数据
-					this.data.statusLoading.show = false;
-					this.data.statusFail.show = false;
 					this.data.statusEmpty.show = true;
-				}				
+				}
 			} else {
 				// 加载出错
 				const error_msg = !!res.error_msg ? res.error_msg : '加载失败';
@@ -142,9 +143,9 @@ Page({
 				statusLoading: this.data.statusLoading,
 				statusFail: this.data.statusFail,
 				statusEmpty: this.data.statusEmpty,
-
 				topics: this.data.topics,
 			});
+
 		}, (err) => {
 			console.log(err);
 			// 加载出错
