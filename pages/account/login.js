@@ -79,7 +79,7 @@ Page({
 					success: () => {
 						setTimeout(() => {
 							const redirectUrl = this.data.redirect || '/pages/index/index';
-							util.redirect(redirectUrl);
+							util.redirect(decodeURIComponent(redirectUrl));
 						}, 2000);
 						
 					}

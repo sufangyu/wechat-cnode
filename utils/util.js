@@ -65,7 +65,7 @@ function redirect(url) {
  * @param {*} url 
  */
 function redirectToLogin(url) {
-	const redirectUrl = '/pages/account/login?redirect=/' + url;
+	const redirectUrl = '/pages/account/login?redirect=/' + encodeURIComponent(url);
 	redirect(redirectUrl);
 }
 
