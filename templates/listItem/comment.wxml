@@ -1,0 +1,28 @@
+<!-- 评论 -->
+<template name="commentItem">
+    <view class="comment">
+        <view class="comment__avatar">
+            <image class="img-avatar" src="{{ author.avatar_url }}" />
+        </view>
+
+        <view class="comment__info">
+            <view class="comment__media">
+                <view class="comment__media__left">
+                    <view class="comment__username">{{author.loginname}}</view>
+                    <view class="comment__date">{{create_at}}</view>
+                </view>
+                <view class="comment__media__right">
+                    <view class="comment__actions">
+                        <text bindtap="replyHandle" data-id="{{id}}" data-name="{{author.loginname}}">回复</text>
+                        <text bindtap="praiseHandle" data-id="{{id}}" class="{{ is_uped ? 'praised' : '' }}">点赞（{{upsLength}}）</text>
+                    </view>
+                </view>
+            </view>
+            <view class="comment__content">
+                <view class="markdown-text">
+                    {{content}}
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
