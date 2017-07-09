@@ -1,0 +1,95 @@
+<!--detail.wxml-->
+<import is="statusLoading" src="../../../templates/status/statusLoading.wxml" />
+<import is="statusFail" src="../../../templates/status/statusFail.wxml" />
+<import is="statusEmpty" src="../../../templates/status/statusEmpty.wxml" />
+<import is="commentItem" src="../../../templates/listItem/comment.wxml" />
+<import is="wxParse" src="../../../wxParse/wxParse.wxml"/>
+
+<view class="container">
+    <template
+        is="statusLoading"
+        wx:if="{{statusLoading.show}}"
+        data="{{...statusLoading}}"
+    />
+
+    <template
+        is="statusFail"
+        wx:if="{{statusFail.show}}"
+        data="{{...statusFail}}"
+        bindtap="failHandle"
+    />
+
+    
+
+    <view class="topic__detail" wx:if="{{!statusLoading.show && !statusFail.show && !statusEmpty.show}}">
+        <view class="topic__content">
+            <view class="topic__content__title">
+                <text>{{topicDetail.title}}</text>
+            </view>
+            <view class="topic__content__media flex flex-between">
+                <view class="flex-between__left">
+                    <view class="flex">
+                        <view class="topic-detail__avatar">
+                            <image src="{{topicDetail.author.avatar_url}}" class="img-avatar" />
+                        </view>
+                        <view class="flex-1">
+                            <view class="topic-detail__author">{{topicDetail.author.loginname}}</view>
+                            <view class="topic-detail__create">{{topicDetail.create_at}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="flex-between__right">
+                    <text class="topic-detail__tag">{{topicDetail.tabName}}</text>
+                    <view class="topic-detail__extra">
+                        <text>{{topicDetail.visit_count}}</text>
+                        <text>{{topicDetail.reply_count}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="topic__content__body">
+                <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+            </view>
+        </view>
+        <view class="topic__comment">
+            <view class="topic__commen__header">全部评论</view>
+            <view class="view topic__commen__body">
+                <template
+                    wx:if="{{topicDetail.replies.length}}"
+					is="commentItem"
+					wx:for="{{topicDetail.replies}}"
+        			wx:key="{{index}}"
+					data="{{...item}}"
+				/>
+
+                <template
+                    is="statusEmpty"
+                    wx:if="{{topicDetail.replies.length === 0}}"
+                    data="{{...statusEmpty}}"
+                />
+            </view>
+        </view>
+    </view>
+
+    <view class="topic__tabbar">
+        <view class="topic__tabbar__input">
+            <input 
+                type="text" 
+                focus="{{inputFocus}}"
+                placeholder="{{inputPlaceholder}}" 
+                bindfocus="focusHandle"
+                bindblur="blurHandle"
+                bindinput="inputHandle"
+            />
+        </view>
+        <view class="topic__tabbar__action">
+            <text wx:if="{{inputActive}}" bindtap="submitReply">发送</text>
+            <text 
+                wx:if="{{!inputActive}}" 
+                class="{{ isCollected ? 'collected' : '' }}"
+                bindtap="collectActionHandle"
+            >{{ isCollected ? '取消收藏' : '收藏' }}</text>
+        </view>
+    </view>
+
+</view>
+
