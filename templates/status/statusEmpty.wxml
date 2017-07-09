@@ -1,5 +1,7 @@
 <!-- 页面内容为空 
     image: 图片地址
+    style: 排版样式. page or module
+    text: 提示内容
 -->
 <template name="statusEmpty">
     <view class="status status--empty {{style == 'module' ? 'status--style-module':''}}">
