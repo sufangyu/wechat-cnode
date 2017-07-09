@@ -1,0 +1,101 @@
+/* detail.wxss */
+@import "../../../wxParse/wxParse.wxss";
+
+.topic__detail {
+    padding-bottom: 80rpx;
+}
+
+.topic__content {
+    background-color: #fff;
+    margin-bottom: 30rpx;
+}
+.topic__content__title {
+    padding: 20rpx;
+    border-bottom: 1rpx solid #ccc;
+    font-size: 40rpx;
+    line-height: 1.4;
+}
+.topic__content__media {
+    padding: 20rpx 20rpx 0rpx 20rpx;
+}
+.topic__content__media .flex-between__right {
+    text-align: right;
+}
+.topic__content__media .flex-between__right text {
+    margin-left: 15rpx;
+}
+
+.topic-detail__avatar image {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.05);
+    margin-right: 20rpx;
+}
+.topic-detail__create {
+    font-size: 24rpx;
+    opacity: 0.5;
+}
+.topic-detail__tag {
+    display: inline-block;
+    padding: 6rpx 10rpx;
+    border-radius: 6rpx;
+    margin-bottom: 10rpx;
+    color: #ffffff;
+    font-size: 20rpx;
+    background-color: #5677fc;
+}
+.topic-detail__extra {
+    font-size: 24rpx;
+    opacity: 0.5;
+}
+
+.topic__content__body {
+    padding: 20rpx;
+}
+.topic__content__body image {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 100%;
+}
+
+
+/* 评论 */
+.topic__comment {
+    background-color: #fff;
+}
+.topic__commen__header {
+    padding: 20rpx;
+}
+.topic__commen__body {
+    padding: 0 20rpx;
+}
+
+
+/*  */
+.topic__tabbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 -3rpx 20rpx rgba(0,0,0,0.15);
+    display: flex;
+    font-size: 28rpx;
+}
+.topic__tabbar__input {
+    flex: 1;
+}
+.topic__tabbar__input input {
+    height: 80rpx;
+    padding: 0 20rpx;
+}
+.topic__tabbar__action text {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 20rpx;
+}
+
+.topic__tabbar__action text.collected {
+    color: #5677fc;
+}
