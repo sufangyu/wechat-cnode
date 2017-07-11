@@ -1,0 +1,32 @@
+<!-- 编辑主题 
+    image: 图片地址
+    style: 排版样式. page or module
+    text: 提示内容
+-->
+<template name="topicEdit">
+    <view class="topic__edit">
+        <view class="form__group">
+            
+            <picker mode="selector" bindchange="bindSelectCategory" value="{{index}}" range-key="{{'name'}}" range="{{tabs}}">
+                <view class="label">类别</view>
+                <view class="picker">
+                    <text wx:if="{{selectTabIndex === -1}}" class="placeholder">请选择类别</text>
+                    <text wx:if="{{selectTabIndex !== -1}}">{{tabs[selectTabIndex].name}}</text>
+                </view>
+            </picker>
+            
+        </view>
+        <view class="form__group">
+            <view class="label">标题</view>
+            <input type="text" bindinput="inputTitleHandle" value="{{title}}" placeholder="请输入标题" />
+        </view>
+        <view class="form__group">
+            <view class="label">内容</view>
+            <textarea value="{{content}}" bindinput="inputContentHandle" bindblur="bindTextAreaBlur" maxlength="-1" auto-height placeholder="请输入主题内容" />
+        </view>
+
+        <view class="form__group">
+            <button bindtap="submitTopic">提交发布</button>
+        </view>
+    </view>
+</template>
