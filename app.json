@@ -1,5 +1,6 @@
 {
-  "pages": [    
+  "pages": [
+    "pages/user/index/index",
     "pages/index/index",
     "pages/message/message",
     "pages/account/login",
@@ -8,11 +9,12 @@
     "pages/user/collect/collect",
     "pages/user/recent/replies/replies",
     "pages/user/recent/topics/topics",
-    "pages/user/index/index",
+    
     "pages/user/about/about",
     "pages/user/me/me",
     "pages/recent/replies/replies",
-    "pages/topic/detail/detail"
+    "pages/topic/detail/detail",
+    "pages/topic/create/create"
   ],
   "window": {
     "backgroundTextStyle": "light",
