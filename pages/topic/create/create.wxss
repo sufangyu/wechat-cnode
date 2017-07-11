@@ -1,0 +1,4 @@
+/* create.wxss */
+.topic__edit {
+    padding: 20rpx;
+}
