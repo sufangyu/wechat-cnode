@@ -13,7 +13,7 @@
     <view class="panel panel--padding">
         <view class="grids">
             <view class="grid">
-                <navigator url="/pages/account/login">
+                <navigator url="/pages/topic/create/create">
                     <image class="grid__icon" src="../../../assets/creat.svg" />
                     <view><text class="grid__name">发表主题</text></view>
                 </navigator>
