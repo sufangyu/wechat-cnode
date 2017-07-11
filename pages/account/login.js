@@ -88,7 +88,7 @@ Page({
 		}, (err) => {
 			this.removeLogining();
 			wx.showToast({
-				title: '失败成功',
+				title: '登录失败',
 				image: '../../assets/fail.svg',
 			});
 		});
