@@ -187,3 +187,37 @@
 .meta__right text:last-child {
 	margin-left: 0;
 }
+
+
+/* form */
+.form__group {
+	margin-bottom: 30rpx;
+}
+
+.form__group .label {
+	font-size: 24rpx;
+	opacity: 0.5;
+	margin-bottom: 15rpx;
+}
+
+.form__group .placeholder {
+	opacity: 0.8;
+}
+.form__group .picker,
+.form__group input {
+	height: 50rpx;
+	line-height: 50rpx;
+	font-size: 30rpx;
+	color: #666;
+	border-bottom: 1rpx solid rgba(0,0,0,0.15);
+}
+.form__group textarea {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 350rpx;
+	max-height: 600rpx;
+	padding: 20rpx;
+	font-size: 30rpx;
+	color: #666;
+	border: 1rpx solid rgba(0,0,0,0.15);
+}
