@@ -203,9 +203,6 @@ Page({
 		});
 
 	},
-	removeLogining() {
-
-	},
 	// 获取选择分类的下标
 	getSelectTabIndex(tabName) {
 		console.log(tabName);
@@ -239,7 +236,7 @@ Page({
 	},
 	// 内容标题
 	inputContentHandle(event) {
-		this.data.topic.content = event.detail.content;
+		this.data.topic.content = event.detail.value;
 
 		this.setData({
 			topic: this.data.topic,
