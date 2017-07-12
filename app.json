@@ -14,7 +14,8 @@
     "pages/user/me/me",
     "pages/recent/replies/replies",
     "pages/topic/detail/detail",
-    "pages/topic/create/create"
+    "pages/topic/create/create",
+    "pages/topic/edit/edit"
   ],
   "window": {
     "backgroundTextStyle": "light",
