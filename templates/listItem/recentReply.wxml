@@ -1,15 +1,17 @@
 <!-- 最近回复 -->
 <template name="recentReply">
-    <view class="meta recent-item">
-        <view class="meta__header">
-            <image src="{{ author.avatar_url }}" />
-        </view>
-        <view class="meta__body">
-            <view class="recent-item__title">{{title}}</view>
-            <view class="recent-item__meta flex flex-between">
-                <text class="flex-between__left">{{ author.loginname }}</text>
-                <text class="flex-between__right">{{ last_reply_at }}</text>
+    <view class="recent-item">
+        <navigator class="meta" url="{{detailUrl + '?id=' + id}}">
+            <view class="meta__header">
+                <image src="{{ author.avatar_url }}" />
             </view>
-        </view>
+            <view class="meta__body">
+                <view class="recent-item__title">{{title}}</view>
+                <view class="recent-item__meta flex flex-between">
+                    <text class="flex-between__left">{{ author.loginname }}</text>
+                    <text class="flex-between__right">{{ last_reply_at }}</text>
+                </view>
+            </view>
+        </navigator>
     </view>
 </template>
