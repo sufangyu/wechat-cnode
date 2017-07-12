@@ -124,6 +124,7 @@ Page({
 					// 格式化数据
 					replies.forEach((item) => {
 						item.last_reply_at = moment(item.last_reply_at).fromNow();
+						item.detailUrl = '/pages/topic/detail/detail'
 					});
 
 					this.data.replies = replies;
