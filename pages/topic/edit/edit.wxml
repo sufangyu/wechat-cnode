@@ -1,0 +1,9 @@
+<!--create.wxml-->
+<import is="topicEdit" src="../../../templates/form/topicEdit.wxml" />
+
+<view class="container white-bg">
+    <template
+        is="topicEdit"
+        data="{{...topic}}"
+    />
+</view>
