@@ -32,7 +32,7 @@ function isTabBarPage(url) {
 
 
 /**
- * 重定向
+ * 重定向页面
  * @param {*} url 
  */
 function redirect(url) {
@@ -48,6 +48,34 @@ function redirect(url) {
 		});
 	} else {
 		wx.redirectTo({
+			url: url,
+			success: (res) => {
+				console.log(res);
+			},
+			fail: (err) => {
+				console.log(err);
+			}
+		});
+	}
+}
+
+/**
+ * 跳转页面
+ * @param {*} url 
+ */
+function navigate(url) {
+	if (isTabBarPage(url)) {
+		wx.switchTab({
+			url: url,
+			success: (res) => {
+				console.log(res);
+			},
+			fail: (err) => {
+				console.log(err);
+			}
+		});
+	} else {
+		wx.navigateTo({
 			url: url,
 			success: (res) => {
 				console.log(res);
@@ -75,5 +103,6 @@ module.exports = {
 	formatTime,
 	isTabBarPage,
 	redirect,
+	navigate,
 	redirectToLogin,
 }
