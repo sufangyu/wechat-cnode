@@ -172,13 +172,13 @@ Page({
 	handlerEdit(event) {
 		const topicId = event.target.dataset.id;
 		const editUrl = '/pages/topic/edit/edit?id=' + topicId;
-		util.redirect(editUrl);
+		util.navigate(editUrl);
 	},
 	// 预览
 	handlerPreview(event) {
 		const topicId = event.target.dataset.id;
 		const previewUrl = '/pages/topic/detail/detail?id=' + topicId;
-		util.redirect(previewUrl);
+		util.navigate(previewUrl);
 	},
 	// 删除
 	handlerDel(event) {
