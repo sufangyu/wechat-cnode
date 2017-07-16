@@ -121,7 +121,6 @@
 .list-menu__footer {
     padding: 0 20rpx;
 	font-size: 24rpx;
-	opacity: 0.5;
 }
 .list-menu__footer image {
 	width: 36rpx;
@@ -175,8 +174,24 @@
 	display: block;
 }
 
+.meta__left view {
+	margin-right: 16rpx;
+	display: inline-block;
+	vertical-align: middle;
+}
+.meta__left view:last-child {
+	margin-right: 0;
+}
+.meta__left .icon {
+	width: 32rpx;
+	height: 32rpx;
+	vertical-align: middle;
+	margin-right: 10rpx;
+}
+
 .meta__left text {
 	margin-right: 16rpx;
+	vertical-align: middle;
 }
 .meta__left text:last-child {
 	margin-right: 0;
@@ -221,3 +236,22 @@
 	color: #666;
 	border: 1rpx solid rgba(0,0,0,0.15);
 }
+
+
+/* tabs */
+.tabs {
+	height: 80rpx;
+	line-height: 80rpx;
+	background-color: #5171f0;
+	color: #fff;
+	display: flex;
+}
+.tab__link {
+	flex: 1;
+	text-align: center;
+	opacity: 0.5;
+}
+.tab__link.active {
+	opacity: 1;
+}
+
