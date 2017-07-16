@@ -1,40 +1,39 @@
 /**index.wxss**/
 .page__topic {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 /* 水平选项 */
 .topic__tabs {
-  color: #fff;
-  background-color: #5171f0;
-  white-space: nowrap;
-  display: flex;
-  position: relative;
+	color: #fff;
+	background-color: #5171f0;
+	white-space: nowrap;
+	position: relative;
 }
 .topic__tabs::after {
-  content: "";
-  display: block;
-  width: 40rpx;
-  height: 100%;
-  background-image: linear-gradient(to left, #5171f0 100%, rgba(81,113,240,0.5) 0%);
+	content: "";
+	display: block;
+	width: 40rpx;
+	height: 100%;
+	background-image: linear-gradient(to left, #5171f0 100%, rgba(81,113,240,0.5) 0%);
 }
 .topic__tabs text {
-  height: 80rpx;
-  line-height: 80rpx;
-  padding: 0 40rpx;
-  word-wrap: break-word;
-  opacity: 0.7;
+	height: 80rpx;
+	line-height: 80rpx;
+	padding: 0 36rpx;
+	word-wrap: break-word;
+	opacity: 0.7;
 }
 .topic__tabs text.active {
-  opacity: 1;
+	opacity: 1;
 }
 
 .topic__lists {
-    flex: 1;
-    height: calc(100vh - 80rpx);
+	flex: 1;
+	height: calc(100vh - 80rpx);
 }
 .topic__list {
-    height: 100%;
+	height: 100%;
 }
