@@ -1,16 +1,16 @@
 <view class="container white-bg">
     <view class="text__content">
         <text class="h3">关于项目</text>
-        <text>项目是基于 CNode 社区提供的 API，采用 VueJS 重写的 Webapp。</text>
+        <text>项目是基于 CNode 社区提供的 API，使用微信小程序实现的简版 CNode 中文社区。</text>
         
         <text class="h3">技术栈</text>
-        <text>项目基于 vue2、vue-router、vuex 进行开发，使用了 vue-cli 开发、编译打包。</text> 
+        <text>项目基于微信小程序进行开发，只使用了小程序提供的原生扫码接口实现扫码登录。</text> 
         
         <text class="h3">源码地址</text>
-        <text>https://github.com/sufangyu/vue-cnode</text> 
+        <text>https://github.com/sufangyu/wechat-cnode</text> 
         
         <text class="h3">意见反馈</text> 
-        <text>https://github.com/sufangyu/vue-cnode/issue</text> 
+        <text>https://github.com/sufangyu/wechat-cnode/issue</text> 
         
         <text class="h3">当前版本</text> 
         <text>V 1.0.0</text>
