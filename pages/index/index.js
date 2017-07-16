@@ -1,4 +1,5 @@
 //index.js
+
 import request from '../../api/request.js';
 import moment from '../../utils/moment.js';
 
@@ -97,10 +98,6 @@ Page({
 			return;
 		}
 		currentTabObj.isLoading = true;
-		// this.setData({
-		// 	topics: this.data.topics,
-		// });
-
 		console.log('currentTabObj =>>', currentTabObj);
 		
 		if (!currentTabObj.isInit) {
@@ -122,20 +119,15 @@ Page({
 			currentTabObj.isLoading = false;
 			currentTabObj.isInit = true;
 
-			if (this.data.nextPage > 5) {
-				// 模拟加载到第5页没有数据了
-				currentTabObj.isNoData = true;
-			}
-
 			if (res.success) {
 				if (res.data.length) {
 					// 格式化数据
 					res.data.forEach((item) => {
 						item.content = item.content.substring(0, 80).replace(/\r\n/gi, '');
 						item.create_at = moment(item.create_at).format('YYYY-MM-DD HH:MM:SS');
-						item.detailUrl = '/pages/topic/detail/detail'
+						item.detailUrl = '/pages/topic/detail/detail';
+						item.baseUrl = '../../';
 					});
-
 					console.log(currentTabObj);
 
 					currentTabObj.lists = currentTabObj.lists.concat(res.data);
@@ -156,7 +148,7 @@ Page({
 			wx.hideLoading();
 			currentTabObj.isLoading = false;
 			this.setData({
-				topics: topics,
+				topics: this.data.topics,
 			});
 			console.log(err);
 		});
