@@ -7,7 +7,6 @@ moment.locale('zh-cn');
 
 var WxParse = require('../../../wxParse/wxParse.js');
 
-
 const APP = getApp();
 
 Page({
@@ -18,18 +17,18 @@ Page({
 	data: {
 		statusLoading: {
 			show: true,
-			image: '../../../../assets/status/loading.svg',
+			image: '../../../assets/status/loading.svg',
 			text: '正在加载中',
 		},
 		statusFail: {
 			show: false,
-			image: '../../../../assets/status/fail.svg',
+			image: '../../../assets/status/fail.svg',
 			text: '加载失败，点击重试~',
 		},
 		statusEmpty: {
 			show: false,
 			style: 'module',
-			image: '../../../../assets/status/empty.svg',
+			image: '../../../assets/status/empty.svg',
 			text: '暂时没有评论~',
 		},
 		topicId: '',
@@ -60,14 +59,13 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-
+		this.checkIsLogin();
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-		this.checkIsLogin();
 	},
 
 	/**
@@ -245,7 +243,7 @@ Page({
 
 				wx.showToast({
 					title: successMsg,
-					image: '../../../assets/success.svg',
+					image: '/assets/success.png',
 				});
 
 				this.setData({
@@ -255,7 +253,7 @@ Page({
 				const failMsg = res.error_msg || '点赞失败, 请重试';
 				wx.showToast({
 					title: failMsg,
-					image: '../../../assets/fail.svg',
+					image: '/assets/fail.png',
 				});
 			}
 		}, (err) => {
@@ -263,7 +261,7 @@ Page({
 			const errMsg = err.error_msg || '点赞失败, 请重试';
 			wx.showToast({
 				title: errMsg,
-				image: '../../../assets/fail.svg',
+				image: '/assets/fail.png',
 			});
 		});
 		
@@ -299,21 +297,21 @@ Page({
 			if (res.success) {
 				wx.showToast({
 					title: '收藏成功',
-					image: '../../../assets/success.svg',
+					image: '/assets/success.png',
 				});
 				this.setCollectState('collected');
 			} else {
 				const failMsg = res.error_msg || '收藏失败, 请重试';
 				wx.showToast({
 					title: failMsg,
-					image: '../../../assets/fail.svg',
+					image: '/assets/fail.png',
 				});
 			}
 		}, (err) => {
 			const errMsg = err.error_msg || '收藏失败, 请重试';
 			wx.showToast({
 				title: errMsg,
-				image: '../../../assets/fail.svg',
+				image: '/assets/fail.png',
 			});
 		});
     },
@@ -326,21 +324,21 @@ Page({
 			if (res.success) {
 				wx.showToast({
 					title: '已取消收藏',
-					image: '../../../assets/success.svg',
+					image: '/assets/success.png',
 				});
 				this.setCollectState('unCollect');
 			} else {
 				const failMsg = res.error_msg || '取消收藏失败, 请重试';
 				wx.showToast({
 					title: failMsg,
-					image: '../../../assets/fail.svg',
+					image: '/assets/fail.png',
 				});
 			}
 		}, (err) => {
 			const errMsg = err.error_msg || '取消收藏失败, 请重试';
 			wx.showToast({
 				title: errMsg,
-				image: '../../../assets/fail.svg',
+				image: '/assets/fail.png',
 			});
 		});
     },
@@ -407,20 +405,20 @@ Page({
 			if (res.success) {
 				wx.showToast({
 					title: '评论成功',
-					image: '../../../assets/success.svg',
+					image: '/assets/success.png',
 				});
 			} else {
 				const failMsg = res.error_msg || '评论失败, 请重试';
 				wx.showToast({
 					title: failMsg,
-					image: '../../../assets/fail.svg',
+					image: '/assets/fail.png',
 				});
 			}
 		}, (err) => {
 			const errMsg = err.error_msg || '评论失败, 请重试';
 			wx.showToast({
 				title: errMsg,
-				image: '../../../assets/fail.svg',
+				image: '/assets/fail.png',
 			});
 		});
 		
