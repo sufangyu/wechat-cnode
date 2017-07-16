@@ -33,7 +33,7 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.checkIsLogin();
 	},
 
 	/**
@@ -47,7 +47,6 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-		this.checkIsLogin();
 	},
 
 	/**
@@ -123,6 +122,8 @@ Page({
 					res.data.forEach((item) => {
 						item.content = item.content.substring(0, 80).replace(/\r\n/gi, '');
 						item.create_at = moment(item.create_at).format('YYYY-MM-DD HH:MM:SS');
+						item.detailUrl = '/pages/topic/detail/detail';
+						item.baseUrl = '../../../';
 					});
 
 					this.data.topics = collect;
