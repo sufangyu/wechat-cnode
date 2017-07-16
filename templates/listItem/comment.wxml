@@ -13,8 +13,14 @@
                 </view>
                 <view class="comment__media__right">
                     <view class="comment__actions">
-                        <text bindtap="replyHandle" data-id="{{id}}" data-name="{{author.loginname}}">回复</text>
-                        <text bindtap="praiseHandle" data-id="{{id}}" class="{{ is_uped ? 'praised' : '' }}">点赞（{{upsLength}}）</text>
+                        <view>
+                            <image bindtap="replyHandle" data-id="{{id}}" data-name="{{author.loginname}}" class="icon" src="../../../assets/icon-reply.png" />
+                            <!-- <text>回复</text> -->
+                        </view>
+                        <view>
+                            <image bindtap="praiseHandle" data-id="{{id}}" class="icon" src="../../../assets/icon-praise.png" />
+                            <text class="{{ is_uped ? 'praised' : '' }}">{{upsLength}}</text>
+                        </view>
                     </view>
                 </view>
             </view>
