@@ -12,7 +12,7 @@ Page({
     data: {
 		disabled: false,
 		loading: false,
-		token: '974395a4-8d5b-498e-ac14-b7ca8f143594',
+		token: '',
 		redirect: '',
     },
 
@@ -51,11 +51,39 @@ Page({
      */
     onUnload: function () {
     
-    },
+	},
+	// 扫码登录
+	loginByScanCode() {
+		wx.scanCode({
+			success: (res) => {
+				console.log(res);
+				this.setData({
+					token: res.result,
+				});
 
+				this.submitLogin();
+			},
+			fail: (err) => {
+				console.log(err);
+			},
+		})
+	},
 	// 提交登录
 	submitLogin() {
 		console.log('提交登录');
+		console.log(this.data);
+
+		if (this.data.token === '') {
+			wx.showToast({
+				title: '输入AccessToken',
+				image: '/assets/fail.png',
+				complete: (result) => {
+					console.log(result);
+				},
+			});
+			return;
+		}
+
 		this.setLogining();
 
 		const data = {
@@ -74,23 +102,38 @@ Page({
 
 				wx.showToast({
 					title: '登录成功',
-					image: '../../assets/success.svg',
+					image: '/assets/success.png',
 					duration: 2000,
 					success: () => {
 						setTimeout(() => {
+							this.setData({
+								token: '',
+							});
 							const redirectUrl = this.data.redirect || '/pages/index/index';
 							util.redirect(decodeURIComponent(redirectUrl));
 						}, 2000);
 						
 					}
 				});
+			} else {
+				const failMsg = res.error_msg || '登录失败';
+				wx.showToast({
+					title: failMsg,
+					image: '/assets/fail.png',
+				});
 			}
 		}, (err) => {
 			this.removeLogining();
 			wx.showToast({
 				title: '登录失败',
-				image: '../../assets/fail.svg',
+				image: '/assets/fail.png',
 			});
+		});
+	},
+	// 获取输入框的值
+	inputHandle(event) {
+		this.setData({
+			token: event.detail.value
 		});
 	},
 	// 设置登录中状态
