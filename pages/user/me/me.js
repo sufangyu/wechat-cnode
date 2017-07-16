@@ -24,15 +24,15 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-    
+		this.checkIsLogin();
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-		this.checkIsLogin();
-    },
+
+	},
 
     /**
      * 生命周期函数--监听页面隐藏
@@ -82,7 +82,7 @@ Page({
 				const failMsg = res.error_msg || '加载失败';
 				wx.showToast({
 					title: failMsg,
-					image: '../../../assets/fail.svg',
+					image: '/assets/fail.png',
 				});
 			}
 		}, (err) => {
@@ -90,7 +90,7 @@ Page({
 			const errMsg = err.error_msg || '网络异常';
 			wx.showToast({
 				title: errMsg,
-				image: '../../../assets/fail.svg',
+				image: '/assets/fail.png',
 			});
 		});
 	},
