@@ -41,6 +41,11 @@ button[disabled][type="primary"] {
 }
 */
 
+.hl-no {
+	background-color: rgba(0, 0, 0, 0); 
+	opacity: 1;
+}
+
 
 .flex {
     display: flex;
@@ -155,7 +160,6 @@ button[disabled][type="primary"] {
 }
 
 /* comment item */
-
 .comment {
   display: flex;
   padding-top: 40rpx;
@@ -191,11 +195,23 @@ button[disabled][type="primary"] {
     font-size: 0;
     vertical-align: middle;
 }
-.comment__actions text {
-	font-size: 26rpx;
+.comment__actions view {
+    display: inline-block;
+    vertical-align:middle;
+    font-size: 26rpx;
 	margin-left: 30rpx;
-	opacity: 0.6;
 	cursor: pointer;
+}
+.comment__actions text {
+	opacity: 0.6;
+    vertical-align:middle;
+    margin-left: 10rpx;
+}
+.comment__actions .icon {
+    width: 32rpx;
+    height: 32rpx;
+	cursor: pointer;
+    vertical-align:middle;
 }
 .comment__actions text.praised {
 	color: #5677fc;
@@ -227,3 +243,97 @@ button[disabled][type="primary"] {
 .comment__content p:last-child {
 	margin-bottom: 0;
 }
+
+
+/* message item */
+.message-timeline {
+	padding: 30rpx;
+}
+.message {
+	position: relative;
+	background-color: #fff;
+	padding: 25rpx 25rpx 0;
+	margin-bottom: 20rpx;
+	margin-left: 100rpx;
+}
+.message:before {
+    content: " ";
+    position: absolute;
+    left: -72rpx;
+    top: 50rpx;
+    bottom: -80rpx;
+    z-index: 1;
+    display: block;
+    width: 4rpx;
+    background: #e0e0e0;
+}
+.message:last-child:before {
+    display: none;
+}
+.message__avatar {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    z-index: 11;
+    left: -100rpx;
+    top: 25rpx;
+}
+.message__avatar image {
+      position: relative;
+      z-index: 11;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 50%;
+      background-color: #eeeeee;
+}
+.message__info {
+	flex: 1;
+    position: relative;
+}
+.message__info:after {
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      top: 10rpx;
+      left: -62rpx;
+      pointer-events: none;
+      border: solid transparent;
+      border-right-color: #fff;
+      border-width: 20rpx;
+}
+.message__media {
+    display: flex;
+	align-items: center;
+	justify-content: space-between;
+    background-color: transparent;
+    padding: 25rpx 0;
+    font-size: 24rpx;
+    border-top: 1rpx solid #e5e5e5;
+}
+.message__media__right {
+      opacity: 0.6;
+}
+.message__media .sep {
+      margin: 0 14rpx;
+}
+.message__title {
+    font-size: 28rpx;
+    opacity: 0.8;
+    max-height: 9999rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	opacity: 0.8;
+}
+.message__content {
+    margin: 30rpx 0 40rpx;
+    font-size: 30rpx;
+    line-height: 1.4;
+    text-align: justify;
+    max-height: 9999rpx;
+    word-break: break-all;
+}
+
+
