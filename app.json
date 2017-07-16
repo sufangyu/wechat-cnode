@@ -1,18 +1,16 @@
 {
   "pages": [
-    "pages/user/index/index",
     "pages/index/index",
-    "pages/message/message",
-    "pages/account/login",
+    "pages/user/index/index",
     "pages/user/setting/index/index",
     "pages/user/setting/cnode/cnode",
     "pages/user/collect/collect",
     "pages/user/recent/replies/replies",
     "pages/user/recent/topics/topics",
-    
     "pages/user/about/about",
+    "pages/message/message",
     "pages/user/me/me",
-    "pages/recent/replies/replies",
+    "pages/account/login",
     "pages/topic/detail/detail",
     "pages/topic/create/create",
     "pages/topic/edit/edit"
@@ -31,20 +29,20 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "assets/tabbar-home.svg",
-        "selectedIconPath": "assets/tabbar-home-hl.svg",
+        "selectedIconPath": "./assets/tabbar-home-hl.png",
+        "iconPath": "./assets/tabbar-home.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/message/message",
-        "iconPath": "assets/tabbar-message.svg",
-        "selectedIconPath": "assets/tabbar-message-hl.svg",
+        "iconPath": "./assets/tabbar-message.png",
+        "selectedIconPath": "./assets/tabbar-message-hl.png",
         "text": "信息"
       },
       {
         "pagePath": "pages/user/index/index",
-        "iconPath": "assets/tabbar-me.svg",
-        "selectedIconPath": "assets/tabbar-me-hl.svg",
+        "iconPath": "./assets/tabbar-me.png",
+        "selectedIconPath": "./assets/tabbar-me-hl.png",
         "text": "我"
       }
     ]
