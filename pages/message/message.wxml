@@ -1,0 +1,71 @@
+<!--message.wxml-->
+<import is="statusLoading" src="../../templates/status/statusLoading.wxml" />
+<import is="statusFail" src="../../templates/status/statusFail.wxml" />
+<import is="statusEmpty" src="../../templates/status/statusEmpty.wxml" />
+<import is="messageItem" src="../../templates/listItem/message.wxml" />
+
+<view class="container">
+	<view class="tabs">
+		<view bindtap="tabHandle" class="tab__link {{ ativeIndex === '1' ? 'active' : '' }}" data-index="1"><text>未读信息</text></view>
+		<view bindtap="tabHandle" class="tab__link {{ ativeIndex === '2' ? 'active' : '' }}" data-index="2"><text>已读信息</text></view>
+	</view>
+
+	<div class="tab__content" wx:if="{{ativeIndex === '1'}}">
+		<template
+			is="statusLoading"
+			wx:if="{{statusLoading.show}}"
+			data="{{...statusLoading}}"
+		/>
+		<template
+			is="statusFail"
+			wx:if="{{statusFail.show}}"
+			data="{{...statusFail}}"
+			bindtap="failHandle"
+		/>
+		<template
+			is="statusEmpty"
+			wx:if="{{isLoaded && unRead.length === 0}}"
+			data="{{...statusEmptyForUnRead}}"
+		/>
+
+		<view class="message-timeline">
+			<template
+				wx:if="{{unRead.length}}"
+				is="messageItem"
+				wx:for="{{unRead}}"
+				wx:key="{{index}}"
+				data="{{...item}}"
+			/>
+		</view>
+	</div>
+
+	<div class="tab__content" wx:if="{{ativeIndex === '2'}}">
+		<template
+			is="statusLoading"
+			wx:if="{{statusLoading.show}}"
+			data="{{...statusLoading}}"
+		/>
+		<template
+			is="statusFail"
+			wx:if="{{statusFail.show}}"
+			data="{{...statusFail}}"
+			bindtap="failHandle"
+		/>
+		<template
+			is="statusEmpty"
+			wx:if="{{isLoaded && readed.length === 0}}"
+			data="{{...statusEmptyForReaded}}"
+		/>
+
+		<view class="message-timeline">
+			<template
+				wx:if="{{readed.length}}"
+				is="messageItem"
+				wx:for="{{readed}}"
+				wx:key="{{index}}"
+				data="{{...item}}"
+			/>
+		</view>
+	</div>
+
+</view>

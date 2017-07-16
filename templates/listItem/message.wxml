@@ -1,0 +1,23 @@
+<!-- 信息 -->
+<template name="messageItem">
+    <view class="message">
+        <view class="message__avatar">
+            <image src="{{author.avatar_url}}" class="img-avatar" />
+        </view> 
+        <view class="message__info">
+            <navigator url="{{detailUrl}}" class="hl-no">
+                <view class="message__title">{{topic.title}}</view>
+                <view class="message__content">{{reply.content}}</view>
+                <view class="message__media">
+                    <view class="message__media__left"></view>
+                    <view class="message__media__right">
+                        <text class="message__username">{{author.loginname}}</text>
+                        <text class="sep"> - </text>
+                        <text class="message__date">{{create_at}}</text>
+                    </view>
+                </view>
+                </navigator>
+            
+        </view>
+    </view>
+</template>
