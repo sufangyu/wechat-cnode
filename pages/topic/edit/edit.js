@@ -56,19 +56,14 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-
+		this.checkIsLogin();
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-		// this.data.topic.selectTabIndex = this.getSelectTabIndex(this.data.topic.selectTab);
-		// this.setData({
-		// 	topic: this.data.topic,
-		// });
 
-		this.checkIsLogin();
 	},
 
 	/**
@@ -141,7 +136,7 @@ Page({
 				const failMsg = res.error_msg || '加载失败, 返回重试';
 				wx.showToast({
 					title: failMsg,
-					image: '../../../assets/fail.svg',
+					image: '/assets/fail.png',
 				});
 			}
 		}, (err) => {
@@ -149,7 +144,7 @@ Page({
 			const errMsg = res.error_msg || '加载失败, 返回重试';
 			wx.showToast({
 				title: errMsg,
-				image: '../../../assets/fail.svg',
+				image: '/assets/fail.png',
 			});
 		});
 	},
@@ -159,15 +154,12 @@ Page({
 		let isEmpty = false;
 		let emptyTips = '';
 		if (this.data.topic.selectTab === '') {
-			console.log(11111111);
 			emptyTips = '分类不能为空';
 			isEmpty = true;
 		} else if (this.data.topic.title === '') {
-			console.log(2222222222);
 			emptyTips = '标题不能为空';
 			isEmpty = true;
 		} else if (this.data.topic.content === '') {
-			console.log(33333333333);
 			emptyTips = '内容不能为空';
 			isEmpty = true;
 		}
@@ -175,7 +167,7 @@ Page({
 		if (isEmpty) {
 			wx.showToast({
 				title: emptyTips,
-				image: '../../../assets/fail.svg',
+				image: '/assets/fail.png',
 				duration: 2000,
 			});
 			return;
@@ -212,7 +204,7 @@ Page({
 			if (res.success) {
 				wx.showToast({
 					title: '编辑主题成功',
-					image: '../../../assets/success.svg',
+					image: '/assets/success.png',
 					duration: 2000,
 					success: () => {
 						setTimeout(() => {
@@ -228,7 +220,7 @@ Page({
 				const failMsg = res.error_msg || '编辑主题失败, 请重试';
 				wx.showToast({
 					title: failMsg,
-					image: '../../../assets/fail.svg',
+					image: '/assets/fail.png',
 				});
 			}
 		}, (err) => {
@@ -240,7 +232,7 @@ Page({
 			const errMsg = err.error_msg || '编辑主题失败, 请重试';
 			wx.showToast({
 				title: errMsg,
-				image: '../../assets/fail.svg',
+				image: '/assets/fail.png',
 			});
 		});
 
