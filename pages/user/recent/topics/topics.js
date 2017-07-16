@@ -41,14 +41,14 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-
+		this.checkIsLogin();
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-		this.checkIsLogin();
+	
 	},
 
 	/**
@@ -184,7 +184,7 @@ Page({
 	handlerDel(event) {
 	wx.showToast({
 		title: '删除暂不可用',
-		image: '../../../../assets/unhappy.svg',
+		image: '/assets/unhappy.png',
 		duration: 2000,
 	})
 	},
