@@ -41,8 +41,14 @@
                 <view class="flex-between__right">
                     <text class="topic-detail__tag">{{topicDetail.tabName}}</text>
                     <view class="topic-detail__extra">
-                        <text>{{topicDetail.visit_count}}</text>
-                        <text>{{topicDetail.reply_count}}</text>
+                        <view>
+                            <image class="icon" src="../../../assets/icon-view.png" />
+                            <text>{{topicDetail.visit_count}}</text>
+                        </view>
+                        <view>
+                            <image class="icon" src="../../../assets/icon-comment.png" />
+                            <text>{{topicDetail.reply_count}}</text>
+                        </view>
                     </view>
                 </view>
             </view>
@@ -82,12 +88,21 @@
             />
         </view>
         <view class="topic__tabbar__action">
-            <text wx:if="{{inputActive}}" bindtap="submitReply">发送</text>
-            <text 
+            <view 
+                class="topic__tabbar__action__icon" 
+                wx:if="{{inputActive}}" 
+                bindtap="submitReply"
+            >
+                <image src="../../../assets/icon-send.png" />
+            </view>
+            <view 
                 wx:if="{{!inputActive}}" 
-                class="{{ isCollected ? 'collected' : '' }}"
+                class="topic__tabbar__action__icon {{ isCollected ? 'collected' : '' }}"
                 bindtap="collectActionHandle"
-            >{{ isCollected ? '取消收藏' : '收藏' }}</text>
+            >
+                <image wx:if="{{!isCollected}}" src="../../../assets/icon-favorite.png" />
+                <image wx:if="{{isCollected}}" src="../../../assets/icon-favorited.png" />
+            </view>
         </view>
     </view>
 
