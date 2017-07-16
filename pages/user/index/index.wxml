@@ -1,6 +1,6 @@
 <view class="container">
     <view class="user__header">
-        <navigator wx:if="{{!isLogin}}" url="/pages/account/login">
+        <navigator class="hl-no" wx:if="{{!isLogin}}" url="/pages/account/login">
             <image src="../../../assets/default-avatar.png" />
             <view><text>登录/注册</text></view>
         </navigator>
@@ -14,19 +14,19 @@
         <view class="grids">
             <view class="grid">
                 <navigator url="/pages/topic/create/create">
-                    <image class="grid__icon" src="../../../assets/creat.svg" />
+                    <image class="grid__icon" src="../../../assets/creat.png" />
                     <view><text class="grid__name">发表主题</text></view>
                 </navigator>
             </view>
             <view class="grid">
                 <navigator url="/pages/user/recent/replies/replies">
-                    <image class="grid__icon" src="../../../assets/reply.svg" />
+                    <image class="grid__icon" src="../../../assets/reply.png" />
                     <view><text class="grid__name">最近回复</text></view>
                 </navigator>
             </view>
             <view class="grid">
                 <navigator url="/pages/user/recent/topics/topics">
-                    <image style="color: rgb(255, 152, 0);" class="grid__icon" src="../../../assets/send.svg" />
+                   <image style="color: rgb(255, 152, 0);" class="grid__icon" src="../../../assets/send.png" />
                     <view><text class="grid__name">最近发布</text></view>
                 </navigator>
             </view>
@@ -36,66 +36,65 @@
     <view class="panel">
         <navigator url="/pages/user/collect/collect" class="list-menu">
             <view class="list-menu__header">
-                <image src="../../../assets/set-favorites.svg" />
+                <image src="../../../assets/set-favorites.png" />
             </view>
             <view class="list-menu__body">
                 <text class="list-menu__title">我的收藏</text>
             </view>
             <view class="list-menu__footer">
-                <image src="../../../assets/arrow-left.svg" />
+                <image src="../../../assets/arrow-left.png" />
             </view>
         </navigator>
 
         <navigator url="/pages/user/me/me" class="list-menu">
             <view class="list-menu__header">
-                <image src="../../../assets/set-user.svg" />
+                <image src="../../../assets/set-user.png" />
             </view>
             <view class="list-menu__body">
                 <text class="list-menu__title">个人资料</text>
             </view>
             <view class="list-menu__footer">
-                <image src="../../../assets/arrow-left.svg" />
+                <image src="../../../assets/arrow-left.png" />
             </view>
         </navigator>
 
-        <navigator url="/pages/account/login" class="list-menu list-menu--more">
+        <navigator url="/pages/index/index" class="list-menu list-menu--more list-menu--disabled">
             <view class="list-menu__header">
-                <image src="../../../assets/set-comment.svg" />
+                <image src="../../../assets/set-comment.png" />
             </view>
             <view class="list-menu__body">
                 <text class="list-menu__title">意见反馈</text>
                 <view class="list-menu__brief"><text>去 GItHub 上提交 Issues</text></view>
             </view>
             <view class="list-menu__footer">
-                <image src="../../../assets/arrow-left.svg" />
+                <image src="../../../assets/arrow-left.png" />
             </view>
         </navigator>
 
         <navigator url="/pages/user/setting/index/index" class="list-menu">
             <view class="list-menu__header">
-                <image src="../../../assets/set-setting.svg" />
+                <image src="../../../assets/set-setting.png" />
             </view>
             <view class="list-menu__body">
                 <text class="list-menu__title">设置</text>
             </view>
             <view class="list-menu__footer">
-                <image src="../../../assets/arrow-left.svg" />
+                <image src="../../../assets/arrow-left.png" />
             </view>
         </navigator>
         
     </view>
 
     <view class="panel">
-        <navigator url="/pages/user/about/about" class="list-menu">
+        <navigator url="/pages/user/setting/cnode/cnode" class="list-menu">
             <view class="list-menu__header">
-                <image src="../../../assets/set-about.svg" />
+                <image src="../../../assets/set-cnode.png" />
             </view>
             <view class="list-menu__body">
-                <text class="list-menu__title">关于项目</text>
+                <text class="list-menu__title">关于 CNode 社区</text>
             </view>
-            <view class="list-menu__extra"><text>1.0.1</text></view>
             <view class="list-menu__footer">
-                <image src="../../../assets/arrow-left.svg" />
+                <image src="../../../assets/arrow-left.png" />
             </view>
         </navigator>
     </view>
