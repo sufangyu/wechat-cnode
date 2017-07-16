@@ -4,9 +4,9 @@
 <view class="container">
 	<view class="page__topic">
 		<!-- tab -->
-		<scroll-view 
-			scroll-x 
+		<scroll-view
 			class="topic__tabs scroll-x"
+			scroll-x="true"
 		>
 			<text 
 				wx:for="{{tabs}}" 
